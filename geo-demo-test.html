@@ -3,60 +3,194 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Location demo — learning test</title>
+  <title>Indrani — Butterfly Top & Palazzo Set</title>
   <style>
+    :root {
+      --bg: #faf8f6;
+      --card: #fff;
+      --accent: #2c1810;
+      --muted: #5c534d;
+      --border: #e8e0d8;
+      --highlight: #c9a87c;
+    }
     * { box-sizing: border-box; }
     body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      max-width: 520px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      line-height: 1.5;
-      color: #1a1a1a;
+      margin: 0;
+      font-family: "Georgia", "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--accent);
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem 3rem;
+    }
+    .hero {
+      background: linear-gradient(145deg, #f0ebe4 0%, #e5ddd4 100%);
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+    }
+    .hero-badge {
+      font-family: system-ui, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.35rem, 4vw, 1.85rem);
+      font-weight: 400;
+      margin: 0 0 0.75rem;
+      line-height: 1.25;
+    }
+    .hero-price {
+      font-family: system-ui, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .hero-note {
+      font-family: system-ui, sans-serif;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+    .placeholder-img {
+      width: 100%;
+      max-height: 280px;
+      object-fit: cover;
+      border-radius: 12px;
+      background: #ddd;
+      display: block;
+      margin-bottom: 1.25rem;
+      border: 1px solid var(--border);
+    }
+    .sans {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     }
     .card {
-      border: 1px solid #ddd;
+      background: var(--card);
+      border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 1.25rem 1.5rem;
+      padding: 1.25rem 1.35rem;
       margin-bottom: 1rem;
-      background: #fafafa;
     }
-    .card h2 { margin-top: 0; font-size: 1.1rem; }
-    .ok { color: #0a7; }
-    .err { color: #c33; }
-    code { background: #eee; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.9em; }
-    small { color: #666; }
+    .card h2 {
+      font-family: system-ui, sans-serif;
+      font-size: 0.95rem;
+      margin: 0 0 0.75rem;
+      font-weight: 600;
+    }
+    .card p { margin: 0.5rem 0; }
+    .ok { color: #1a7f4a; }
+    .err { color: #b00020; }
+    code {
+      font-family: ui-monospace, monospace;
+      background: #f0ebe4;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.88em;
+    }
+    small { color: var(--muted); font-family: system-ui, sans-serif; font-size: 0.8rem; }
+    .btn {
+      display: inline-block;
+      font-family: system-ui, sans-serif;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.65rem 1.25rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-top: 0.75rem;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    details.dev {
+      margin-top: 1.5rem;
+      font-family: system-ui, sans-serif;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    details.dev summary { cursor: pointer; font-weight: 600; color: var(--accent); }
+    details.dev ul { padding-left: 1.2rem; }
   </style>
 
-  <!-- Replace G-XXXXXXXXXX with your real GA4 Measurement ID from analytics.google.com -->
+  <!-- Replace G-XXXXXXXXXX in all 3 places below (same ID) or remove GA script block entirely -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXXXXX');
+    var GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; /* must match gtag config above */
   </script>
 </head>
 <body>
-  <h1>Visit test page</h1>
-  <p>This page is for learning: IP-based location (approximate) + Google Analytics.</p>
+  <div class="wrap">
+    <!-- Replace the src below with your real product photo URL when you host -->
+    <img class="placeholder-img"
+      src="https://placehold.co/720x400/f0ebe4/5c534d?text=Your+product+photo"
+      alt="Product: Butterfly top and palazzo set"
+      width="720"
+      height="400">
 
-  <div class="card">
-    <h2>Detected location (ipapi.co)</h2>
-    <p id="geo-status">Loading…</p>
-    <p id="geo-detail"></p>
-    <small>Accuracy depends on network/VPN. Mobile data often shows ISP area, not exact city.</small>
-  </div>
+    <div class="hero">
+      <p class="hero-badge">New season</p>
+      <h1>Butterfly top &amp; black palazzo set</h1>
+      <p class="hero-price">₹ — <span class="sans" style="font-weight:400; font-size:0.9rem;">(demo page)</span></p>
+      <p class="hero-note">This single HTML file is your project demo: visitors see the product, and the script below looks up approximate city from IP (via ipapi.co).</p>
+      <a class="btn" href="#visit-note" style="pointer-events:none; opacity:0.85;">Shop — link your store here</a>
+    </div>
 
-  <div class="card">
-    <h2>Google Analytics</h2>
-    <p>If you replaced <code>G-XXXXXXXXXX</code> in the source, open GA4 → <strong>Reports → Realtime</strong> while this page is open.</p>
+    <div class="card sans">
+      <h2>Visit location (for your project demo)</h2>
+      <p id="geo-status">Detecting approximate location…</p>
+      <p id="geo-detail"></p>
+      <small>Uses public IP geolocation (not GPS). VPN or mobile data can show a different city. This runs in the browser; there is no separate Java server unless you add one on Hostinger later.</small>
+    </div>
+
+    <div class="card sans">
+      <h2>Google Analytics (optional)</h2>
+      <p>If you replace <code>G-XXXXXXXXXX</code> with your real ID, open GA4 → <strong>Reports → Realtime</strong> when someone visits. This page also sends a <code>geo_detected</code> event with city/region when lookup succeeds.</p>
+    </div>
+
+    <p id="visit-note" class="sans" style="font-size:0.9rem; color:var(--muted); margin-top:1.5rem;">
+      Replace placeholder price, button link, and image <code>src</code> before going live.
+    </p>
+
+    <details class="dev">
+      <summary>How to test with 5 people (learning)</summary>
+      <ul>
+        <li>Upload this file to Hostinger <code>public_html</code> (e.g. <code>product-demo.html</code>).</li>
+        <li>Set your GA4 ID in two places in the <code>&lt;head&gt;</code> if you use Analytics.</li>
+        <li>Send the public URL to five people; each opens it once on phone or Wi‑Fi.</li>
+        <li>They should see <strong>City / Region / Country</strong> on this page right away.</li>
+        <li>You open GA4 <strong>Realtime</strong> during their visit to confirm the tag fires.</li>
+        <li>For a class report: note that IP location is approximate; five visits are enough to prove the idea, not to choose a warehouse.</li>
+      </ul>
+    </details>
   </div>
 
   <script>
     (function () {
       var statusEl = document.getElementById('geo-status');
       var detailEl = document.getElementById('geo-detail');
+
+      function sendGaGeoEvent(data) {
+        if (typeof gtag !== 'function') return;
+        if (typeof GA_MEASUREMENT_ID === 'undefined' || GA_MEASUREMENT_ID.indexOf('XXXX') !== -1) return;
+        gtag('event', 'geo_detected', {
+          city: data.city || '',
+          region: data.region || '',
+          country: data.country_name || data.country || ''
+        });
+      }
 
       fetch('https://ipapi.co/json/')
         .then(function (r) {
@@ -71,7 +205,9 @@
             '<strong>City:</strong> ' + (data.city || '—') + '<br>' +
             '<strong>Region:</strong> ' + (data.region || data.region_code || '—') + '<br>' +
             '<strong>Country:</strong> ' + (data.country_name || data.country || '—') + '<br>' +
-            '<strong>IP (for learning only):</strong> ' + (data.ip || '—');
+            '<strong>Network IP (demo only):</strong> ' + (data.ip || '—');
+
+          sendGaGeoEvent(data);
         })
         .catch(function (e) {
           statusEl.innerHTML = '<span class="err">Could not load location.</span>';
