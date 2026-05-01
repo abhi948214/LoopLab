@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Location demo — learning test</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      max-width: 520px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      line-height: 1.5;
+      color: #1a1a1a;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+      background: #fafafa;
+    }
+    .card h2 { margin-top: 0; font-size: 1.1rem; }
+    .ok { color: #0a7; }
+    .err { color: #c33; }
+    code { background: #eee; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.9em; }
+    small { color: #666; }
+  </style>
+
+  <!-- Replace G-XXXXXXXXXX with your real GA4 Measurement ID from analytics.google.com -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+  <h1>Visit test page</h1>
+  <p>This page is for learning: IP-based location (approximate) + Google Analytics.</p>
+
+  <div class="card">
+    <h2>Detected location (ipapi.co)</h2>
+    <p id="geo-status">Loading…</p>
+    <p id="geo-detail"></p>
+    <small>Accuracy depends on network/VPN. Mobile data often shows ISP area, not exact city.</small>
+  </div>
+
+  <div class="card">
+    <h2>Google Analytics</h2>
+    <p>If you replaced <code>G-XXXXXXXXXX</code> in the source, open GA4 → <strong>Reports → Realtime</strong> while this page is open.</p>
+  </div>
+
+  <script>
+    (function () {
+      var statusEl = document.getElementById('geo-status');
+      var detailEl = document.getElementById('geo-detail');
+
+      fetch('https://ipapi.co/json/')
+        .then(function (r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.json();
+        })
+        .then(function (data) {
+          if (data.error) throw new Error(data.reason || 'API error');
+
+          statusEl.innerHTML = '<span class="ok">Location lookup succeeded.</span>';
+          detailEl.innerHTML =
+            '<strong>City:</strong> ' + (data.city || '—') + '<br>' +
+            '<strong>Region:</strong> ' + (data.region || data.region_code || '—') + '<br>' +
+            '<strong>Country:</strong> ' + (data.country_name || data.country || '—') + '<br>' +
+            '<strong>IP (for learning only):</strong> ' + (data.ip || '—');
+        })
+        .catch(function (e) {
+          statusEl.innerHTML = '<span class="err">Could not load location.</span>';
+          detailEl.textContent = e.message || String(e);
+        });
+    })();
+  </script>
+</body>
+</html>
