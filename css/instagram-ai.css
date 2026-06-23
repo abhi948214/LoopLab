@@ -1,0 +1,124 @@
+.instagram-ai-page {
+  background: #1a1a2e;
+  color: #eee;
+  padding-top: 56px;
+}
+
+.ai-hero {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  padding: 4rem 0 3rem;
+  margin-bottom: 0;
+}
+
+.ai-hero h1 {
+  font-weight: 700;
+}
+
+.ai-hero .fa-instagram {
+  margin-right: 0.5rem;
+}
+
+.api-status {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+}
+
+.api-status.ready {
+  background: #28a745;
+}
+
+.api-status.not-ready {
+  background: #dc3545;
+}
+
+.ai-card {
+  background: #16213e;
+  border: 1px solid #0f3460;
+  color: #eee;
+}
+
+.ai-card label {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.ai-card .form-control {
+  background: #0f3460;
+  border-color: #1a4a7a;
+  color: #fff;
+}
+
+.ai-card .form-control:focus {
+  background: #0f3460;
+  border-color: #833ab4;
+  color: #fff;
+  box-shadow: 0 0 0 0.2rem rgba(131, 58, 180, 0.25);
+}
+
+.ai-card .form-control::placeholder {
+  color: #8899aa;
+}
+
+#tool-tabs .nav-link {
+  color: #aaa;
+  border-radius: 2rem;
+  margin: 0 0.25rem;
+  transition: all 0.2s;
+}
+
+#tool-tabs .nav-link:hover {
+  color: #fff;
+  background: rgba(131, 58, 180, 0.3);
+}
+
+#tool-tabs .nav-link.active {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d);
+  color: #fff;
+}
+
+.result-panel {
+  background: #16213e;
+  border: 1px solid #0f3460;
+  border-radius: 0.25rem;
+  padding: 1.5rem;
+  min-height: 200px;
+}
+
+.result-output {
+  background: transparent;
+  border: none;
+  color: #eee;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: inherit;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.copy-btn.copied {
+  background: #28a745;
+  border-color: #28a745;
+  color: #fff;
+}
+
+.instagram-ai-page .btn-primary {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d);
+  border: none;
+}
+
+.instagram-ai-page .btn-primary:hover {
+  background: linear-gradient(135deg, #9b4fd4, #ff3333);
+  border: none;
+}
+
+.instagram-ai-page .btn-primary:disabled {
+  opacity: 0.6;
+}
+
+@media (max-width: 991px) {
+  .result-panel {
+    margin-top: 1.5rem;
+  }
+}
