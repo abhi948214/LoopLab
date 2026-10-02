@@ -1,0 +1,18 @@
+# Bengaluru product SRE — aggregated ATS keywords (Razorpay, PhonePe, CRED, fintech scale-ups)
+# Use for resume keyword alignment when posting-specific JDs are unavailable.
+
+Site Reliability Engineer SRE DevOps Platform Engineering
+Linux Unix RHEL administration internals troubleshooting
+AWS EC2 EKS ECS VPC IAM S3 CloudWatch Route53 load balancer ALB NLB
+Kubernetes containers Docker Podman Helm GitOps ArgoCD
+Terraform infrastructure as code IaC CloudFormation Ansible SaltStack configuration management
+CI/CD Jenkins GitHub Actions deployment pipeline canary rollback feature flags
+Microservices distributed systems high availability HA multi-AZ fault tolerance
+SLO SLI SLA error budget MTTR MTBF on-call incident response postmortem blameless RCA
+Observability Prometheus Grafana OpenTelemetry tracing ELK Loki VictoriaMetrics Datadog
+Kafka messaging streaming Redis cache MySQL PostgreSQL MariaDB Aerospike
+Networking TCP/IP DNS TLS SSL iptables HAProxy Nginx service mesh Istio
+Python Go Golang Java Spring Boot Bash Perl automation scripting
+Chaos engineering resilience testing capacity planning performance tuning
+Payment fintech high QPS mission-critical production debugging
+Security compliance IAM least privilege secrets management
