@@ -7,7 +7,7 @@ tabhishek2007@gmail.com · +91 9148816251 · [linkedin.com/in/abhishek-tiwari-02
 
 ## Summary
 
-Site Reliability Engineer with 4+ years stabilizing mission-critical production systems in regulated fintech. Specializes in API reliability, SLO-driven observability, L2/L3 incident response, and cross-functional RCA. Track record of lowering MTTR, hardening deployments, and improving uptime for high-volume customer-facing banking flows.
+Site Reliability Engineer with 4+ years stabilizing mission-critical production systems in regulated fintech. Specializes in API reliability, microservices operations, SLO-driven observability, L2/L3 incident response, and cross-functional RCA. Track record of lowering MTTR, hardening deployments, and improving uptime for high-volume customer-facing banking flows.
 
 ---
 
@@ -15,7 +15,7 @@ Site Reliability Engineer with 4+ years stabilizing mission-critical production 
 
 **SRE & Reliability:** Incident response, on-call (L2/L3), postmortems/RCA, SLA/SLO/SLI, MTTR reduction, production debugging, API troubleshooting, capacity & health monitoring, post-deployment validation, rollback/hotfix coordination  
 
-**Observability:** Prometheus, Grafana, ELK (Elasticsearch, Logstash, Kibana), Dynatrace, custom alerts, log analysis, application & infrastructure monitoring  
+**Observability:** Prometheus, Grafana, ELK (Elasticsearch, Logstash, Kibana), Dynatrace, distributed tracing, custom alerts, log analysis, application & infrastructure monitoring  
 
 **Cloud & Platform:** Linux, Docker, Kubernetes (deployments, pods, logs, troubleshooting), Terraform, AWS (EKS, EC2, S3, load balancers), high-availability operations  
 
